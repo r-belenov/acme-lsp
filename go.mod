@@ -1,17 +1,19 @@
 module 9fans.net/acme-lsp
 
-go 1.23
+go 1.23.0
 
 require (
+	9fans.net/go v0.0.7
 	9fans.net/internal/go-lsp v0.0.0-20260327195721-1abc868fff35
 	github.com/BurntSushi/toml v0.3.1
-	9fans.net/go v0.0.7
 	github.com/google/go-cmp v0.6.0
+	github.com/rogpeppe/go-internal v1.14.1
 	github.com/sourcegraph/jsonrpc2 v0.2.0
 )
 
 require (
-	github.com/rogpeppe/go-internal v1.14.1 // indirect
 	golang.org/x/sys v0.26.0 // indirect
 	golang.org/x/tools v0.26.0 // indirect
 )
+
+replace 9fans.net/go => /usr/roman/projects/go-plan9

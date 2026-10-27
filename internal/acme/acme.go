@@ -234,29 +234,45 @@ func (w *Win) Addr(format string, args ...interface{}) error {
 // CloseFiles closes all the open files associated with the window w.
 // (These file descriptors are cached across calls to Ctl, etc.)
 func (w *Win) CloseFiles() {
-	w.ctl.Close()
+	if w.ctl != nil {
+		w.ctl.Close()
+	}
 	w.ctl = nil
 
-	w.body.Close()
+	if w.body != nil {
+		w.body.Close()
+	}
 	w.body = nil
 
-	w.addr.Close()
+	if w.addr != nil {
+		w.addr.Close()
+	}
 	w.addr = nil
 
-	w.tag.Close()
+	if w.tag != nil {
+		w.tag.Close()
+	}
 	w.tag = nil
 
-	w.event.Close()
+	if w.event != nil {
+		w.event.Close()
+	}
 	w.event = nil
 	w.ebuf = nil
 
-	w.data.Close()
+	if w.data != nil {
+		w.data.Close()
+	}
 	w.data = nil
 
-	w.xdata.Close()
+	if w.xdata != nil {
+		w.xdata.Close()
+	}
 	w.xdata = nil
 
-	w.errors.Close()
+	if w.errors != nil {
+		w.errors.Close()
+	}
 	w.errors = nil
 }
 
